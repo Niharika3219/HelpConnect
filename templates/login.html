@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - HelpConnect</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                Help<span>Connect</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/requests">Requests</a>
+                <a href="/register">Register</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="auth-container">
+
+        <div class="auth-card">
+
+            <h1>Welcome Back</h1>
+
+            <p>Login to your HelpConnect account.</p>
+
+
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+
+            <p class="auth-link">
+                Don't have an account?
+                <a href="/register">Create an account</a>
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

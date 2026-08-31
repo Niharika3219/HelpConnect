@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Help Requests - HelpConnect</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    
+<header class="navbar">
+
+    <div class="navbar-inner">
+
+        <a href="{{ url_for('home') }}" class="logo">
+            Help<span>Connect</span>
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('requests_page') }}">
+                Requests
+            </a>
+
+            {% if session.get("user_id") %}
+
+                <a href="{{ url_for('request_help') }}">
+                    Ask for Help
+                </a>
+
+                <a href="{{ url_for('offers') }}">
+                    My Offers
+                </a>
+
+                <a href="{{ url_for('dashboard') }}">
+                    Dashboard
+                </a>
+
+                <a
+                    href="{{ url_for('logout') }}"
+                    class="nav-logout"
+                >
+                    Logout
+                </a>
+
+            {% else %}
+
+                <a href="{{ url_for('login') }}">
+                    Login
+                </a>
+
+                <a
+                    href="{{ url_for('register') }}"
+                    class="nav-register"
+                >
+                    Register
+                </a>
+
+            {% endif %}
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+    <!-- =========================
+         REQUESTS
+    ========================== -->
+
+    <main class="requests-container">
+
+        <div class="requests-header">
+
+            <h1>Help Requests</h1>
+
+            <p>
+                See how you can help someone in your community.
+            </p>
+
+        </div>
+
+
+        {% if requests %}
+
+            <div class="requests-grid">
+
+                {% for item in requests %}
+
+                    <div class="request-card">
+
+                        <div class="request-category">
+                            {{ item.category }}
+                        </div>
+
+
+                        <h2>
+                            {{ item.title }}
+                        </h2>
+
+
+                        <p>
+                            {{ item.description }}
+                        </p>
+
+
+                        <div class="request-location">
+
+                            📍 {{ item.location }}
+
+                        </div>
+
+
+                        <div class="request-status">
+
+                            {{ item.status }}
+
+                        </div>
+
+
+                        <small>
+
+                            Posted:
+                            {{ item.created_at }}
+
+                        </small>
+
+<button
+    class="btn btn-primary offer-help-btn"
+    type="button"
+    data-request-id="{{ item.id }}"
+>
+    Offer Help
+</button>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="empty-requests">
+
+                <h2>
+                    No help requests yet
+                </h2>
+
+                <p>
+                    Be the first person to ask for help.
+                </p>
+
+                <a
+                    href="{{ url_for('request_help') }}"
+                    class="btn btn-primary"
+                >
+                    Ask for Help
+                </a>
+
+            </div>
+
+        {% endif %}
+
+    </main>
+
+
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}"
+    ></script>
+
+
+</body>
+
+</html>

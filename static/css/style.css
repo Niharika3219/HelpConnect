@@ -1,0 +1,1194 @@
+/* =========================================================
+   HELPConnect - GLOBAL STYLES
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #172033;
+    background: #f8fafc;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar {
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Logo */
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+
+    color: #172033;
+
+    white-space: nowrap;
+}
+
+
+.logo span {
+    color: #2563eb;
+}
+
+
+/* Navigation */
+
+.navbar nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+}
+
+
+.navbar nav a {
+    text-decoration: none;
+
+    color: #475569;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+}
+
+
+.navbar nav a:hover {
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   GENERAL BUTTONS
+========================================================= */
+
+button,
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    padding: 12px 22px;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease;
+}
+
+
+button:hover,
+.btn:hover {
+    background: #1d4ed8;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+.btn-primary {
+    background: #2563eb;
+
+    color: white;
+}
+
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+
+.secondary-btn {
+    background: white;
+
+    color: #2563eb;
+
+    border: 1px solid #2563eb;
+}
+
+
+.secondary-btn:hover {
+    background: #eff6ff;
+
+    color: #1d4ed8;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 600px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 80px 8%;
+
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #ffffff
+    );
+}
+
+
+.hero-content {
+    max-width: 750px;
+}
+
+
+.small-title {
+    color: #2563eb;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+
+.hero h1 {
+    font-size: 64px;
+
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+}
+
+
+.hero h1 span {
+    color: #2563eb;
+}
+
+
+.hero-text {
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    color: #64748b;
+
+    max-width: 600px;
+
+    margin-bottom: 35px;
+}
+
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.how-it-works,
+.requests {
+    padding: 90px 8%;
+
+    text-align: center;
+}
+
+
+.section-label {
+    color: #2563eb;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+
+h1,
+h2,
+h3 {
+    color: #172033;
+}
+
+
+h2 {
+    font-size: 38px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+
+.steps {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.step-card {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 14px;
+
+    border: 1px solid #e5e7eb;
+
+    text-align: left;
+
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+}
+
+
+.number {
+    color: #2563eb;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+
+.step-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 21px;
+}
+
+
+.step-card p {
+    color: #64748b;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   REQUESTS SECTION - HOME PAGE
+========================================================= */
+
+.requests {
+    background: #f1f5f9;
+}
+
+
+.request-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =========================================================
+   REQUEST CARDS
+========================================================= */
+
+.request-card {
+    background: #ffffff;
+
+    padding: 28px;
+
+    border-radius: 14px;
+
+    text-align: left;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.request-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+
+.request-card h2,
+.request-card h3 {
+    margin-bottom: 12px;
+
+    line-height: 1.3;
+}
+
+
+.request-card p {
+    color: #64748b;
+
+    line-height: 1.6;
+
+    margin-bottom: 16px;
+}
+
+
+.request-category {
+    display: inline-block;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+
+.request-location {
+    color: #475569;
+
+    margin: 12px 0;
+
+    font-size: 15px;
+}
+
+
+.request-status {
+    display: inline-block;
+
+    margin: 12px 0;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.request-card small {
+    display: block;
+
+    color: #94a3b8;
+
+    margin-top: 12px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   REQUESTS PAGE
+========================================================= */
+
+.requests-container {
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 60px 30px 80px;
+}
+
+
+.requests-header {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+
+.requests-header h1 {
+    font-size: 42px;
+
+    margin-bottom: 10px;
+}
+
+
+.requests-header p {
+    color: #64748b;
+
+    font-size: 17px;
+}
+
+
+/*
+   IMPORTANT:
+   Your HTML uses requests-grid (plural)
+*/
+
+.requests-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   OFFER HELP BUTTON
+========================================================= */
+
+.offer-help-btn {
+    width: 100%;
+
+    margin-top: 8px;
+}
+
+
+.offer-help-btn:disabled {
+    background: #94a3b8;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   EMPTY REQUESTS
+========================================================= */
+
+.empty-requests {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 30px auto;
+}
+
+
+.empty-requests h2 {
+    font-size: 28px;
+
+    margin-bottom: 12px;
+}
+
+
+.empty-requests p {
+    color: #64748b;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   ASK FOR HELP PAGE
+========================================================= */
+
+.help-form-container {
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+
+/*
+   This also styles a normal <form>
+   if your request_help.html doesn't have
+   a special form class.
+*/
+
+.requests-container form {
+    background: #ffffff;
+
+    padding: 35px;
+
+    border-radius: 14px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.05);
+
+    max-width: 750px;
+
+    margin: 0 auto;
+}
+
+
+/* Labels */
+
+.requests-container form label {
+    display: block;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #172033;
+
+    margin-bottom: 7px;
+
+    margin-top: 20px;
+}
+
+
+.requests-container form label:first-child {
+    margin-top: 0;
+}
+
+
+/* Inputs */
+
+.requests-container form input,
+.requests-container form textarea,
+.requests-container form select {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #172033;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.requests-container form input:focus,
+.requests-container form textarea:focus,
+.requests-container form select:focus {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+.requests-container form textarea {
+    min-height: 140px;
+
+    resize: vertical;
+}
+
+
+/* Select */
+
+.requests-container form select {
+    cursor: pointer;
+}
+
+
+/* Form button */
+
+.requests-container form button,
+.requests-container form .btn {
+    margin-top: 25px;
+
+    width: 100%;
+}
+
+
+/* Request message */
+
+#requestMessage {
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MY OFFERS
+========================================================= */
+
+.offer-card {
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 14px;
+
+    border: 1px solid #e5e7eb;
+}
+
+
+/* Horizontal line inside offer */
+
+.request-card hr {
+    border: none;
+
+    border-top: 1px solid #e5e7eb;
+
+    margin: 20px 0;
+}
+
+
+/* =========================================================
+   ACCEPT / REJECT BUTTONS
+========================================================= */
+
+.accept-btn {
+    background: #16a34a;
+}
+
+
+.accept-btn:hover {
+    background: #15803d;
+}
+
+
+.reject-btn {
+    background: #dc2626;
+}
+
+
+.reject-btn:hover {
+    background: #b91c1c;
+}
+
+
+/* =========================================================
+   STATUS STYLING
+========================================================= */
+
+.status-pending {
+    background: #fef3c7;
+
+    color: #92400e;
+}
+
+
+.status-accepted {
+    background: #dcfce7;
+
+    color: #166534;
+}
+
+
+.status-rejected {
+    background: #fee2e2;
+
+    color: #991b1b;
+}
+
+
+.status-matched {
+    background: #dbeafe;
+
+    color: #1e40af;
+}
+
+
+/* =========================================================
+   LOGIN / REGISTER
+========================================================= */
+
+.auth-container {
+    min-height: calc(100vh - 70px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 50px 20px;
+}
+
+
+.auth-card {
+    width: 100%;
+
+    max-width: 450px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 14px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+}
+
+
+.auth-card h1 {
+    text-align: center;
+
+    margin-bottom: 10px;
+}
+
+
+.auth-card p {
+    text-align: center;
+
+    color: #64748b;
+
+    margin-bottom: 25px;
+}
+
+
+.auth-card label {
+    display: block;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+
+    margin-top: 18px;
+}
+
+
+.auth-card input {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+.auth-card input:focus {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+.auth-card button {
+    width: 100%;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #172033;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 50px 20px;
+}
+
+
+footer p {
+    color: #94a3b8;
+
+    margin-top: 10px;
+}
+
+
+.copyright {
+    font-size: 13px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        height: auto;
+    }
+
+    .navbar-inner {
+        padding: 16px 5%;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 14px;
+
+        flex-wrap: wrap;
+
+        justify-content: flex-end;
+    }
+
+    .steps,
+    .request-grid,
+    .requests-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        padding: 70px 5%;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .requests-container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+        height: auto;
+    }
+
+    .navbar-inner {
+        flex-direction: column;
+
+        align-items: center;
+
+        padding: 18px 5%;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 10px 15px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .nav-register {
+        padding: 8px 14px;
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding: 70px 5%;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-text {
+        font-size: 17px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn,
+    .hero-buttons button {
+        width: 100%;
+    }
+
+    .steps,
+    .request-grid,
+    .requests-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .how-it-works,
+    .requests {
+        padding: 60px 5%;
+    }
+
+    .requests-container {
+        padding: 40px 5% 60px;
+    }
+
+    .requests-header h1 {
+        font-size: 34px;
+    }
+
+    .requests-container form {
+        padding: 25px 20px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .request-card {
+        padding: 22px;
+    }
+
+    .btn {
+        width: auto;
+    }
+}
+
+/* =====================================================
+   HELP CONNECT FEATURES
+===================================================== */
+
+.features-section {
+    width: 100%;
+    padding: 70px 20px;
+}
+
+
+.features-container {
+    max-width: 1150px;
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+
+/* =====================================================
+   FEATURE CARD
+===================================================== */
+
+.feature-card {
+
+    background: #ffffff;
+
+    padding: 35px 30px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.feature-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.feature-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.feature-card h2 {
+
+    margin-bottom: 15px;
+
+    font-size: 24px;
+
+    color: #222;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.feature-card p {
+
+    color: #666;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+
+    min-height: 80px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.feature-btn {
+
+    display: inline-block;
+
+    padding: 12px 24px;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.feature-btn:hover {
+
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .features-container {
+
+        grid-template-columns:
+            1fr;
+
+        max-width: 500px;
+    }
+
+
+    .feature-card p {
+
+        min-height: auto;
+    }
+
+}

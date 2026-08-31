@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Offers - HelpConnect</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+<header class="navbar">
+
+    <div class="navbar-inner">
+
+        <a href="{{ url_for('home') }}" class="logo">
+            Help<span>Connect</span>
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('requests_page') }}">
+                Requests
+            </a>
+
+            {% if session.get("user_id") %}
+
+                <a href="{{ url_for('request_help') }}">
+                    Ask for Help
+                </a>
+
+                <a href="{{ url_for('offers') }}">
+                    My Offers
+                </a>
+
+                <a href="{{ url_for('dashboard') }}">
+                    Dashboard
+                </a>
+
+                <a
+                    href="{{ url_for('logout') }}"
+                    class="nav-logout"
+                >
+                    Logout
+                </a>
+
+            {% else %}
+
+                <a href="{{ url_for('login') }}">
+                    Login
+                </a>
+
+                <a
+                    href="{{ url_for('register') }}"
+                    class="nav-register"
+                >
+                    Register
+                </a>
+
+            {% endif %}
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="requests-container">
+
+
+    <div class="requests-header">
+
+        <h1>
+            My Offers
+        </h1>
+
+        <p>
+            Help requests that you have offered to help with.
+        </p>
+
+    </div>
+
+
+
+    {% if offers %}
+
+
+        <div class="requests-grid">
+
+
+            {% for offer in offers %}
+
+
+                <div class="request-card">
+
+
+                    <!-- =================================================
+                         HELP REQUEST DETAILS
+                    ================================================= -->
+
+                    {% if offer.help_request %}
+
+
+                        <div class="request-category">
+
+                            {{ offer.help_request.category }}
+
+                        </div>
+
+
+                        <h2>
+
+                            {{ offer.help_request.title }}
+
+                        </h2>
+
+
+                        <p>
+
+                            {{ offer.help_request.description }}
+
+                        </p>
+
+
+                        <div class="request-location">
+
+                            📍
+                            {{ offer.help_request.location }}
+
+                        </div>
+
+
+                    {% else %}
+
+
+                        <h2>
+                            Help Request
+                        </h2>
+
+
+                        <p>
+                            The original request could not be found.
+                        </p>
+
+
+                    {% endif %}
+
+
+
+                    <hr>
+
+
+
+                    <!-- =================================================
+                         YOUR OFFER
+                    ================================================= -->
+
+                    <h3>
+                        Your Offer
+                    </h3>
+
+
+                    {% if offer.message %}
+
+                        <p>
+                            {{ offer.message }}
+                        </p>
+
+                    {% else %}
+
+                        <p>
+                            No message provided.
+                        </p>
+
+                    {% endif %}
+
+
+
+                    <!-- =================================================
+                         OFFER STATUS
+                    ================================================= -->
+
+                    <div class="request-status">
+
+                        Status:
+
+                        {% if offer.status == "pending" %}
+
+                            ⏳
+                            <strong>
+                                Pending
+                            </strong>
+
+                        {% elif offer.status == "accepted" %}
+
+                            ✅
+                            <strong>
+                                Accepted
+                            </strong>
+
+                        {% elif offer.status == "rejected" %}
+
+                            ❌
+                            <strong>
+                                Rejected
+                            </strong>
+
+                        {% else %}
+
+                            <strong>
+                                {{ offer.status }}
+                            </strong>
+
+                        {% endif %}
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         STATUS MESSAGE
+                    ================================================= -->
+
+                    {% if offer.status == "pending" %}
+
+                        <p>
+                            ⏳ Waiting for the requester to respond.
+                        </p>
+
+
+                    {% elif offer.status == "accepted" %}
+
+                        <p>
+                            🎉 The person requesting help accepted
+                            your offer!
+                        </p>
+
+
+                    {% elif offer.status == "rejected" %}
+
+                        <p>
+                            The person requesting help rejected
+                            your offer.
+                        </p>
+
+                    {% endif %}
+
+
+
+                    <!-- =================================================
+                         REQUEST STATUS
+                    ================================================= -->
+
+                    {% if offer.help_request %}
+
+                        <p>
+
+                            Request Status:
+
+                            <strong>
+                                {{ offer.help_request.status }}
+                            </strong>
+
+                        </p>
+
+                    {% endif %}
+
+
+
+                    <!-- =================================================
+                         DATE
+                    ================================================= -->
+
+                    {% if offer.created_at %}
+
+                        <small>
+
+                            Offered:
+                            {{ offer.created_at }}
+
+                        </small>
+
+                    {% endif %}
+
+
+                </div>
+
+
+            {% endfor %}
+
+
+        </div>
+
+
+    {% else %}
+
+
+        <div class="empty-requests">
+
+            <h2>
+                You haven't offered help yet.
+            </h2>
+
+            <p>
+                Go to Requests and offer help to someone.
+            </p>
+
+            <a
+                href="{{ url_for('requests_page') }}"
+                class="btn btn-primary"
+            >
+                View Requests
+            </a>
+
+        </div>
+
+
+    {% endif %}
+
+
+</main>
+
+
+</body>
+
+</html>

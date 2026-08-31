@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - HelpConnect</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+<header class="navbar">
+
+    <div class="navbar-inner">
+
+        <a href="{{ url_for('home') }}" class="logo">
+            Help<span>Connect</span>
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('requests_page') }}">
+                Requests
+            </a>
+
+            {% if session.get("user_id") %}
+
+                <a href="{{ url_for('request_help') }}">
+                    Ask for Help
+                </a>
+
+                <a href="{{ url_for('offers') }}">
+                    My Offers
+                </a>
+
+                <a href="{{ url_for('dashboard') }}">
+                    Dashboard
+                </a>
+
+                <a
+                    href="{{ url_for('logout') }}"
+                    class="nav-logout"
+                >
+                    Logout
+                </a>
+
+            {% else %}
+
+                <a href="{{ url_for('login') }}">
+                    Login
+                </a>
+
+                <a
+                    href="{{ url_for('register') }}"
+                    class="nav-register"
+                >
+                    Register
+                </a>
+
+            {% endif %}
+
+        </nav>
+
+    </div>
+
+</header>
+
+<main class="requests-container">
+
+    <h1>Welcome to HelpConnect 👋</h1>
+
+    <p>
+        Logged in as:
+        <strong>{{ user_email }}</strong>
+    </p>
+
+
+    <hr>
+
+
+    <h2>My Help Requests</h2>
+
+
+    {% if my_requests %}
+
+        <div class="requests-grid">
+
+            {% for item in my_requests %}
+
+                <div class="request-card">
+
+                    <div class="request-category">
+                        {{ item.category }}
+                    </div>
+
+                    <h2>
+                        {{ item.title }}
+                    </h2>
+
+                    <p>
+                        {{ item.description }}
+                    </p>
+
+                    <p>
+                        📍 {{ item.location }}
+                    </p>
+
+                    <p>
+                        Status:
+                        <strong>{{ item.status }}</strong>
+                    </p>
+
+
+                    <a
+                        href="{{ url_for('request_offers', request_id=item.id) }}"
+                        class="btn btn-primary"
+                    >
+                        View Offers
+                    </a>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="empty-requests">
+
+            <h2>You haven't posted any help requests.</h2>
+
+            <a
+                href="{{ url_for('request_help') }}"
+                class="btn btn-primary"
+            >
+                Ask for Help
+            </a>
+
+        </div>
+
+    {% endif %}
+
+</main>
+
+</body>
+</html>
